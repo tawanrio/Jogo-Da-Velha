@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Jogo dvar a Velha</title>
+		<link rel="stylesheet" type="text/css" href="css/css2.css" media="screen" />
+		<meta charset="utf-8">
+	</head>
+		<body>
+
+			
+			<div id="container">
+				<div id="principal">
+				<h1>Jogo da Velha</h1>
+                <nav id="menu">   
+					 	<div id="ll"></div>
+						<div class="btnMenu" id="btnJogar">Jogar</div>
+						<div class="btnMenu" id="btnCreditos">Creditos</div>
+				</nav> 
+			</div>   
+			
+			
+
+				<div id="personalizar">   
+					<div id="ll"></div>	
+					<div id="persJogo">Personalizar Jogo</div>
+					<div id="divPre">
+						<div class="ladoAB" id="ladoA">
+							<label class="T2Jogador "for="player1">Nome do Jogador 1</label>
+							<input class="inpName" maxlength="8" value="" placeholder="Seu nome aqui" id="player1" type="text">
+							<label for="">Escolha Seu Marcador</label>
+							<div id="marcador">
+								<form id='form'>
+								<input type="radio" name="tipoMarcadorJ1" value="X" class="checkbox"><label for="">= X </label><br>
+								<input type="radio" name="tipoMarcadorJ1" value="O" class="checkbox"><label for="">= O </label><br>
+								<input type="radio" name="tipoMarcadorJ1" value="#" class="checkbox"><label for="">= # </label><br>
+								<input type="radio" name="tipoMarcadorJ1" value="♥" class="checkbox"><label for="">= ♥ </label><br>
+								</form>
+						
+							</div>
+						</div>
+
+						
+						<div class="ladoAB" id="ladoA">
+							<label class="T2Jogador "for="player2">Nome do Jogador 2</label>
+							<input class="inpName" maxlength="8" value="" placeholder="Seu nome aqui" id="player2" type="text">
+							<label for="">Escolha Seu Marcador</label>
+							<div id="marcador">
+								<input type="radio" name="tipoMarcadorJ2" value="X" class="checkbox"><label for="">= X </label><br>
+								<input type="radio" name="tipoMarcadorJ2" value="O" class="checkbox"><label for="">= O </label><br>
+								<input type="radio" name="tipoMarcadorJ2" value="#" class="checkbox"><label for="">= # </label><br>
+								<input type="radio" name="tipoMarcadorJ2" value="♥" class="checkbox"><label for="">= ♥ </label><br>
+							</div>
+						</div>
+					</div>
+					<div id="divBtnInicio">
+						<div class="btn" id="btnVoltarT2">Voltar</div>
+						<div class="btn" id="btnInicioT2">Iniciar</div>
+					</div>
+				</div>   
+				
+				
+				<div id="jogo">
+					<div id="teste">
+					<div class="ladoABT3" id="ladoAT3">
+						<div class="grid">
+							<div class="table" id="0"></div>
+							<div class="table" id="1"></div>
+							<div class="table" id="2"></div>
+							<div class="table" id="3"></div>
+							<div class="table" id="4"></div>
+							<div class="table" id="5"></div>
+							<div class="table" id="6"></div>
+							<div class="table" id="7"></div>
+							<div class="table" id="8"></div>
+						</div>
+					</div>	
+					<div class="ladoABT3" id="ladoBT3">
+						<div id="placar">Placar</div>
+						<div id="divisorLadoB-B">
+							<div class="ladoABT32" id="ladoAT32">
+								<div class='nomeJ' id="nomeJ1"></div>
+								<div class='point' id='pontoJ1'>0</div>
+							</div>
+							<div class="ladoABT32" id="ladoBT32">
+								
+								<div class='nomeJ' id='nomeJ2'></div>
+								<div class='point' id='pontoJ2'>0</div>
+							</div>
+						</div>
+							<div id="vez">
+								<div class='vez'>Vez do: </div>
+								<div class='vez' id="mostraJ"></div>
+							</div>	
+
+						</div>
+					
+						</div>
+						<div id='comandos'>
+							<div class="btnT3" id="limpar">Limpar Tabuleiro</div>
+							<div class="btnT3" id="novoJogo">Novo Jogo</div>
+							<div class="btnT3" id="btnVoltarT3">Voltar</div>
+						</div>
+						
+					</div>
+		
+				</div>
+			</div>
+
+			
+		
+			
+
+		<div id='box'>
+			<div id="boxHead"></div>
+			<div id="boxBody"></div>
+			<div id="boxFoot"></div>
+		</div>
+
+<script>
+
+
+	
+</script>
+		
+<script src="js/js.js"></script>
+	</bory>
+</html>
+
