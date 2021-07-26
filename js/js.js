@@ -11,6 +11,8 @@ var retConfirm;
 var j2 = '';
 
 
+
+
 chamadaEventos();
 
 
@@ -45,6 +47,7 @@ document.querySelector('#btnJogar').addEventListener('click', function(){
 		textoJogodaVelha.style.direction = 'none'
 		primeiraTela.style.display = 'none';
 		segundaTela.style.display = 'block';
+		terceiraTela.sty
 	})
 	
 document.querySelector('#btnVoltarT2').addEventListener('click', function(){
@@ -56,8 +59,8 @@ document.querySelector('#btnVoltarT2').addEventListener('click', function(){
 document.querySelector('#btnInicioT2').addEventListener('click', function(){
 		inicio();
 		if(j1 != '' && j2 != ''){
-			terceiraTela.style.display = 'block';
 			segundaTela.style.display = 'none';
+			terceiraTela.style.display = 'block';
 		}else{
 			Alert.cod('Por favor, Insira os nomes dos Jogadores!')
 		}
@@ -67,7 +70,7 @@ document.querySelector('#btnInicioT2').addEventListener('click', function(){
 
 document.querySelector('#btnVoltarT3').addEventListener('click', function(){
 		confirm.cod("Tem certeza que deseja voltar ao Menu?")
-
+		
 		if(retConfirm == true){
 		textoJogodaVelha.style.direction = 'block'
 		primeiraTela.style.display = 'block';
@@ -179,7 +182,7 @@ function limpar(){
 	}		
 }
 function reset(){
-	confirm.cod('Tem certeza que deseja iniciar novo jogo? <br> Obs: Isso Resetara os Pontos ' )
+	confirm.cod('Tem certeza que deseja iniciar novo jogo? <br> Obs: Isso Resetara os Pontos ' , callback)
 	if(retConfirm == true){	
 		pontoJ1 = 0;
 		pontoJ2 = 0;
@@ -203,35 +206,83 @@ function novoAlert(){
 		novoAlert.style.display = 'block';
 		document.querySelector('#boxHead').innerHTML = "Atenção";
 		document.querySelector('#boxBody').innerHTML = texto;
-		document.querySelector('#boxFoot').innerHTML = '<div class="botaoBox" onclick="Alert.ok()">OK</div>'		
+		document.querySelector('#boxFoot').innerHTML = '<div class="botaoBox" onclick="Alert.ok()">OK</div>'	
+		
 	}
 
 	this.ok = function(){
 		document.querySelector('#box').style.display = 'none';
 	}
-} 
-
+}
 
 function novoConfirm(){
 	this.cod = function(texto){
+		const btnConfirmar = document.createElement("button");
+		btnConfirmar.textContent = 'Confirmar';
+		btnConfirmar.addEventListener('click',	function(){confirm.confirmar()})
+		btnConfirmar.className = 'botaoBox';
+
+		const btnCancelar = document.createElement("button");
+		btnCancelar.textContent = 'Cancelar';
+		btnCancelar.addEventListener('click', () => {confirm.cancelar()})
+		btnCancelar.className = 'botaoBox';
+
 		novoConfirm = document.querySelector('#box');
 		novoConfirm.style.left =  (window.innerWidth/2) - (569 * .5)+"px";
 		novoConfirm.style.top = '250px';
 		novoConfirm.style.display = 'block';
 		document.querySelector('#boxHead').innerHTML = "Atenção";
 		document.querySelector('#boxBody').innerHTML = texto;
-		document.querySelector('#boxFoot').innerHTML = '<div class="botaoBox" onclick="confirm.confirmar()">Confirmar</div> <div class="botaoBox" onclick="confirm.cancelar()">Cancelar</div>'  		
-		return 
+		document.querySelector('#boxFoot').innerHTML = '';
+		document.querySelector('#boxFoot').insertAdjacentElement("beforeend",btnConfirmar);
+		document.querySelector('#boxFoot').insertAdjacentElement("beforeend",btnCancelar);
+		
+		callback();
+
+		//document.querySelector('#boxFoot').innerHTML = '<div class="botaoBox" onclick="confirm.confirmar()">Confirmar</div> <div class="botaoBox" onclick="confirm.cancelar()">Cancelar</div>'  		
+	
+					
 	}
 
-	this.confirmar = function(retorno){
+	this.confirmar = function(){
 		retConfirm = true;
 		document.querySelector('#box').style.display = 'none';
 		
 	}
-	this.cancelar = function(retorno){
+	this.cancelar = function(){
 		retConfirm = false;
 		document.querySelector('#box').style.display = 'none';
 	
 	}
 }
+
+
+	/*function newbutton(text){
+		const $body = document.querySelector('body');
+		const $button = document.createElement("button");
+		$button.textContent = text;
+
+		$body.insertAdjacentElement("beforeend", $button);
+ 
+		return $button;
+	}
+
+	const login = newbutton("login");
+
+	login.addEventListener('click', function(){
+		alert('teste')
+	
+	})*/
+
+
+
+
+
+
+
+
+
+
+
+
+	
