@@ -10,7 +10,6 @@ var j1 = '';
 var retConfirm;
 var j2 = '';
 
-//teste alo alo
 
 chamadaEventos();
 
