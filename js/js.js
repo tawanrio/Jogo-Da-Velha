@@ -211,7 +211,8 @@ function novoAlert(){
 	this.ok = function(){
 		document.querySelector('#box').style.display = 'none';
 	}
-}
+} 
+
 
 function novoConfirm(){
 	this.cod = function(texto){
