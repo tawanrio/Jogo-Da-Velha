@@ -11,6 +11,7 @@ var retConfirm;
 var j2 = '';
 
 
+//Essa linha eu adicionei diretamente pelo site GitHub
 
 
 chamadaEventos();
