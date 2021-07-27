@@ -9,8 +9,10 @@ var pontoJ2 = 0;
 var j1 = '';
 var retConfirm;
 var j2 = '';
-
-
+var primeiraTela = document.querySelector('#principal');
+var segundaTela = document.querySelector('#personalizar');
+var terceiraTela = document.querySelector('#jogo');
+var textoJogodaVelha = document.querySelector('h1');
 
 
 chamadaEventos();
@@ -18,7 +20,7 @@ chamadaEventos();
 
 //adiciona os nomes dos jogadores caso desejado
 function inicio(){
-	//capMarcador();
+	capMarcador();
 	capNome();
 	vezJogador();
 	inseNomeJ();
@@ -28,10 +30,8 @@ function inicio(){
 //função que contem todos os eventos
 function chamadaEventos(){
 	
-	let primeiraTela = document.querySelector('#principal');
-	let segundaTela = document.querySelector('#personalizar');
-	let terceiraTela = document.querySelector('#jogo');
-	let textoJogodaVelha = document.querySelector('h1');
+	
+
 
 	//Adiciona o evento click , verifica a vez do jogador , insere o marcadorJ1 ou marcadorJ2 e chama a função verificador()
 	a.forEach(quad =>{quad.addEventListener('click', insereJogada)});
@@ -39,46 +39,77 @@ function chamadaEventos(){
 	//Adiciona o evento click e limpa o tabuleiro
 	document.querySelector('#limpar').addEventListener('click', limpar);
 
-	//Adiciona o evento click , e reseta o jogo 
-	document.querySelector('#novoJogo').addEventListener('click', reset);
+	
 
 	//Adiciona evento click ao botao Jogar na tela 1 para passar para tela 2
 document.querySelector('#btnJogar').addEventListener('click', function(){
-		textoJogodaVelha.style.direction = 'none'
-		primeiraTela.style.display = 'none';
-		segundaTela.style.display = 'block';
-		terceiraTela.sty
+		chamaTela2();
 	})
 	
 document.querySelector('#btnVoltarT2').addEventListener('click', function(){
-		document.querySelector('h1').style.direction = 'block'
-		primeiraTela.style.display = 'block';
-		segundaTela.style.display = 'none';
+		chamaTela1();
 	})
 
 document.querySelector('#btnInicioT2').addEventListener('click', function(){
 		inicio();
+		let m1 = document.getElementsByName("tipoMarcadorJ1");
+		let m2 = document.getElementsByName("tipoMarcadorJ2");
+
+
+		
+
+	  
 		if(j1 != '' && j2 != ''){
-			segundaTela.style.display = 'none';
-			terceiraTela.style.display = 'block';
+			if()
+
+			if(m1[0].checked != false || m1[1].checked != false || m1[2].checked != false || m1[3].checked != false ){
+			
+			}
+
+
+
+			chamaTela3();
 		}else{
 			Alert.cod('Por favor, Insira os nomes dos Jogadores!')
-		}
-	
-	  	   
-	})
-
+			}
+		})
 document.querySelector('#btnVoltarT3').addEventListener('click', function(){
-		confirm.cod("Tem certeza que deseja voltar ao Menu?")
-		
+		confirm.cod("Tem certeza que deseja voltar ao Menu?", function(){
+			if(retConfirm == true){
+				zeraJogo();
+				chamaTela1();
+				
+				}
+			})			
+		})
+//Adiciona o evento click , e reseta o jogo 
+document.querySelector('#novoJogo').addEventListener('click', function(){
+	confirm.cod('Tem certeza que deseja iniciar novo jogo? <br> Isso Resetara os Pontos', function(){
 		if(retConfirm == true){
-		textoJogodaVelha.style.direction = 'block'
-		primeiraTela.style.display = 'block';
-		terceiraTela.style.display = 'none';
+			reset();
+			
 		}
-		limpar();
-	})
+	});
+});		
 
+}
+function chamaTela1(){
+	textoJogodaVelha.style.display = 'block'
+	primeiraTela.style.display = 'block';
+	segundaTela.style.display = 'none';
+	terceiraTela.style.display = 'none';
+	}
+function chamaTela2(){
+		textoJogodaVelha.style.display = 'none';
+		primeiraTela.style.display = 'none';
+		segundaTela.style.display = 'block';
+		terceiraTela.style.display = 'none';
+	}
+function chamaTela3(){
+		textoJogodaVelha.style.display = 'none';
+		primeiraTela.style.display = 'none';
+		segundaTela.style.display = 'none';
+		terceiraTela.style.display = 'block';
 }
 //captura o nome dos jogadores
 function capNome(){
@@ -104,6 +135,26 @@ function vezJogador(){
 	
 		document.getElementById('mostraJ').innerText = marcadorJ2
 	}
+}
+function zeraJogo(){
+	let m1 = document.getElementsByName("tipoMarcadorJ1");
+	let m2 = document.getElementsByName("tipoMarcadorJ2");
+	limpar();
+	reset();
+	marcadorJ1 = undefined;
+	marcadorJ2 = undefined;
+	j1 = undefined
+	j2 = undefined
+	document.getElementById('player1').value = '';
+	document.getElementById('player2').value = '';
+	
+	
+   	for(var i=0;i<m1.length;i++)
+      m1[i].checked = false;
+	
+	  for(var i=0;i<m2.length;i++)
+	 m2[i].checked = false;
+
 }
 
 //verifica a vez do jogador , insere o marcadorJ1 ou marcadorJ2 e chama a função verificador
@@ -182,19 +233,19 @@ function limpar(){
 	}		
 }
 function reset(){
-	confirm.cod('Tem certeza que deseja iniciar novo jogo? <br> Obs: Isso Resetara os Pontos ' , callback)
-	if(retConfirm == true){	
-		pontoJ1 = 0;
-		pontoJ2 = 0;
-		document.getElementById('pontoJ1').innerText = pontoJ1;
-		document.getElementById('pontoJ2').innerText = pontoJ2;
-		limpar();
-		inicio();
-		}	
+	pontoJ1 = 0;
+    pontoJ2 = 0;
+	document.getElementById('pontoJ1').innerText = pontoJ1;
+    document.getElementById('pontoJ2').innerText = pontoJ2;
+	vez = true;
+	vezJogador();
+	limpar();
+	
 }
+
+
 var Alert = new novoAlert(); // Cria novo alerta
 var confirm = new novoConfirm();
-
 
 
 // nova caixa de alerta
@@ -215,16 +266,18 @@ function novoAlert(){
 	}
 }
 
+
 function novoConfirm(){
-	this.cod = function(texto){
+	this.cod = function(texto, callback){
 		const btnConfirmar = document.createElement("button");
 		btnConfirmar.textContent = 'Confirmar';
-		btnConfirmar.addEventListener('click',	function(){confirm.confirmar()})
+		btnConfirmar.addEventListener('click',	function(){confirm.confirmar(callback)})
 		btnConfirmar.className = 'botaoBox';
-
+		
+		
 		const btnCancelar = document.createElement("button");
 		btnCancelar.textContent = 'Cancelar';
-		btnCancelar.addEventListener('click', () => {confirm.cancelar()})
+		btnCancelar.addEventListener('click', () => {confirm.cancelar(callback)})
 		btnCancelar.className = 'botaoBox';
 
 		novoConfirm = document.querySelector('#box');
@@ -236,23 +289,18 @@ function novoConfirm(){
 		document.querySelector('#boxFoot').innerHTML = '';
 		document.querySelector('#boxFoot').insertAdjacentElement("beforeend",btnConfirmar);
 		document.querySelector('#boxFoot').insertAdjacentElement("beforeend",btnCancelar);
-		
-		callback();
-
-		//document.querySelector('#boxFoot').innerHTML = '<div class="botaoBox" onclick="confirm.confirmar()">Confirmar</div> <div class="botaoBox" onclick="confirm.cancelar()">Cancelar</div>'  		
-	
-					
+			
+				
 	}
 
-	this.confirmar = function(){
-		retConfirm = true;
+	this.confirmar = function(callback){
 		document.querySelector('#box').style.display = 'none';
+		callback(retConfirm = true);
 		
 	}
-	this.cancelar = function(){
-		retConfirm = false;
+	this.cancelar = function(callback){
 		document.querySelector('#box').style.display = 'none';
-	
+		callback(retConfirm = false);
 	}
 }
 
