@@ -55,7 +55,7 @@ html{    margin-top: 200px;    }
         font-size: 35px;
         font-weight: bold;
         padding: 5px;
-        margin-top: 4px;
+        margin-top: 2px;
         margin-bottom: 4px;
     }
     #marcador{
@@ -137,6 +137,13 @@ html{    margin-top: 200px;    }
         justify-content: space-evenly;
         display: flex;
     }
+    .mVez{
+        margin: 15px 40px ;
+        position: absolute;
+        display: none;
+        
+    }
+ 
     #ll{
         width: 1px;
         height: 1px;
@@ -164,7 +171,7 @@ html{    margin-top: 200px;    }
      display: flex;
  }
  .nomeJ{
-    margin: 25px 0px;
+    margin: 45px 0px 20px 0px;
 }
 .point{
     font-size: 40px;
@@ -174,7 +181,7 @@ html{    margin-top: 200px;    }
     margin:  auto;
     justify-content: space-evenly;
    display: flex;
-    margin: 10px 0;
+    margin: 30px 0 10px 0;
     font-size: 30px;
     font-weight: bold;
 }

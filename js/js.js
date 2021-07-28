@@ -42,7 +42,7 @@ function chamadaEventos(){
 	//Adiciona evento click ao botao Jogar na tela 1 para passar para tela 2
 document.querySelector('#btnJogar').addEventListener('click', function(){
 		chamaTela2();
-		Alert.cod('Insira os nomes dos jogadores e escolha seus marcadores!')
+		Alert.cod('Insira o nome dos jogadores e escolha seus marcadores!')
 	})
 	//volta para a tela 1
 document.querySelector('#btnVoltarT2').addEventListener('click', function(){
@@ -134,8 +134,12 @@ function inseNomeJ(){
 function vezJogador(){
 	if(vez == true){
 		document.getElementById('mostraJ').innerText = marcadorJ1
+		document.getElementById('mVez1').style.display = 'block';
+		document.getElementById('mVez2').style.display = 'none';
 	}else{
 		document.getElementById('mostraJ').innerText = marcadorJ2
+		document.getElementById('mVez1').style.display = 'none';
+		document.getElementById('mVez2').style.display = 'block';
 	}
 }
 //zera completamente o jogo , nome, marcador e pontuação

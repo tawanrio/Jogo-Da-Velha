@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Jogo dvar a Velha</title>
+		<title>Jogo da Velha</title>
 		<link rel="stylesheet" type="text/css" href="css/css2.css" media="screen" />
 		<meta charset="utf-8">
 	</head>
 		<body>
-
-			
 			<div id="container">
 				<div id="principal">
 				<h1>Jogo da Velha</h1>
@@ -18,8 +16,6 @@
 				</nav> 
 			</div>   
 			
-			
-
 				<div id="personalizar">   
 					<div id="ll"></div>	
 					<div id="persJogo">Personalizar Jogo</div>
@@ -32,14 +28,10 @@
 								<form id='form'>
 								<input type="radio" name="tipoMarcadorJ1" value="X" class="checkbox"><label for="">= X </label><br>
 								<input type="radio" name="tipoMarcadorJ1" value="O" class="checkbox"><label for="">= O </label><br>
-								<input type="radio" name="tipoMarcadorJ1" value="#" class="checkbox"><label for="">= # </label><br>
-								<input type="radio" name="tipoMarcadorJ1" value="♥" class="checkbox"><label for="">= ♥ </label><br>
-								
-						
+								<input type="radio" name="tipoMarcadorJ1" value="♪" class="checkbox"><label for="">= ♪ </label><br>
+								<input type="radio" name="tipoMarcadorJ1" value="♥" class="checkbox"><label for="">= ♥ </label><br>					
 							</div>
-						</div>
-
-						
+						</div>						
 						<div class="ladoAB" id="ladoA">
 							<label class="T2Jogador "for="player2">Nome do Jogador 2</label>
 							<input class="inpName" maxlength="8" value="" placeholder="Seu nome aqui" id="player2" type="text">
@@ -47,7 +39,7 @@
 							<div id="marcador">
 								<input type="radio" name="tipoMarcadorJ2" value="X" class="checkbox"><label for="">= X </label><br>
 								<input type="radio" name="tipoMarcadorJ2" value="O" class="checkbox"><label for="">= O </label><br>
-								<input type="radio" name="tipoMarcadorJ2" value="#" class="checkbox"><label for="">= # </label><br>
+								<input type="radio" name="tipoMarcadorJ2" value="♪" class="checkbox"><label for="">= ♪ </label><br>
 								<input type="radio" name="tipoMarcadorJ2" value="♥" class="checkbox"><label for="">= ♥ </label><br>
 							</div>
 						</div></form>
@@ -57,8 +49,7 @@
 						<div class="btn" id="btnInicioT2">Iniciar</div>
 					</div>
 				</div>   
-				
-				
+								
 				<div id="jogo">
 					<div id="tabuleiro">
 					<div class="ladoABT3" id="ladoAT3">
@@ -78,11 +69,12 @@
 						<div id="placar">Placar</div>
 						<div id="divisorLadoB-B">
 							<div class="ladoABT32" id="ladoAT32">
+								<div class="mVez" id="mVez1">▼</div>
 								<div class='nomeJ' id="nomeJ1"></div>
 								<div class='point' id='pontoJ1'>0</div>
 							</div>
 							<div class="ladoABT32" id="ladoBT32">
-								
+								<div class="mVez" id="mVez2">▼</div>
 								<div class='nomeJ' id='nomeJ2'></div>
 								<div class='point' id='pontoJ2'>0</div>
 							</div>
@@ -91,43 +83,28 @@
 								<div class='vez'>Vez do: </div>
 								<div class='vez' id="mostraJ"></div>
 							</div>	
-
 						</div>
-					
 						</div>
 						<div id='comandos'>
 							<div class="btnT3" id="limpar">Limpar Tabuleiro</div>
 							<div class="btnT3" id="novoJogo">Novo Jogo</div>
 							<div class="btnT3" id="btnVoltarT3">Voltar</div>
 						</div>
-						
 					</div>
 					<div id="creditos">
 						<h2>Desenvolvido por: Tawan Rio.</h2>
-						<h3><p>Jogo desenvolvido com o objetivo de estudo e ampliação do portfolio.</p><p> codificação própria.</p></h3>
-						<div id="mold">
-								
+						<h3><p>Desenvolvido com o objetivo de estudo e ampliação do portfolio.</p><p> codificação própria.</p></h3>
+						<div id="mold">								
 								<div class="btn" id="btnVoltarCreditos">Voltar</div>
 						</div> 
 					</div>  
 				</div>
-			
-			
-			
-		
-			
 
 		<div id='box'>
 			<div id="boxHead"></div>
 			<div id="boxBody"></div>
 			<div id="boxFoot"></div>
 		</div>
-
-<script>
-
-
-	
-</script>
 		
 <script src="js/js.js"></script>
 	</bory>
