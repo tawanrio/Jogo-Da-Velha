@@ -25,7 +25,7 @@
 					<div id="persJogo">Personalizar Jogo</div>
 					<div id="divPre">
 						<div class="ladoAB" id="ladoA">
-							<label class="T2Jogador "for="player1">Nome do Jogador 1</label>
+							<form id="form"><label class="T2Jogador "for="player1">Nome do Jogador 1</label>
 							<input class="inpName" maxlength="8" value="" placeholder="Seu nome aqui" id="player1" type="text">
 							<label for="">Escolha Seu Marcador</label>
 							<div id="marcador">
@@ -34,7 +34,7 @@
 								<input type="radio" name="tipoMarcadorJ1" value="O" class="checkbox"><label for="">= O </label><br>
 								<input type="radio" name="tipoMarcadorJ1" value="#" class="checkbox"><label for="">= # </label><br>
 								<input type="radio" name="tipoMarcadorJ1" value="♥" class="checkbox"><label for="">= ♥ </label><br>
-								</form>
+								
 						
 							</div>
 						</div>
@@ -50,9 +50,9 @@
 								<input type="radio" name="tipoMarcadorJ2" value="#" class="checkbox"><label for="">= # </label><br>
 								<input type="radio" name="tipoMarcadorJ2" value="♥" class="checkbox"><label for="">= ♥ </label><br>
 							</div>
-						</div>
+						</div></form>
 					</div>
-					<div id="divBtnInicio">
+					<div id="divBtnT2">
 						<div class="btn" id="btnVoltarT2">Voltar</div>
 						<div class="btn" id="btnInicioT2">Iniciar</div>
 					</div>
@@ -60,7 +60,7 @@
 				
 				
 				<div id="jogo">
-					<div id="teste">
+					<div id="tabuleiro">
 					<div class="ladoABT3" id="ladoAT3">
 						<div class="grid">
 							<div class="table" id="0"></div>
@@ -102,9 +102,16 @@
 						</div>
 						
 					</div>
-		
+					<div id="creditos">
+						<h2>Desenvolvido por: Tawan Rio.</h2>
+						<h3><p>Jogo desenvolvido com o objetivo de estudo e ampliação do portfolio.</p><p> codificação própria.</p></h3>
+						<div id="mold">
+								
+								<div class="btn" id="btnVoltarCreditos">Voltar</div>
+						</div> 
+					</div>  
 				</div>
-			</div>
+			
 			
 			
 		

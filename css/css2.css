@@ -1,16 +1,6 @@
-html{
-    margin-top: 200px;
-    }
-    h1{
-        margin: 35px 0px 10px 0px ;
-        text-align: center;
-        font-size: 50px;
-    }
-   
-    #jogo{       
-        display: none;
-    }
-    #container{
+/*Referente a pagina*/
+html{    margin-top: 200px;    }
+#container{    
         border: solid black 6px;
         margin: auto;
         position: relative;
@@ -20,7 +10,92 @@ html{
         height: 350px;
         cursor: pointer;
     }
-  
+
+    /*referente tela 1*/
+#principal > h1{
+        margin: 35px 0px 10px 0px ;
+        text-align: center;
+        font-size: 50px;
+    }
+ #principal > #menu{
+        display: block;
+        width: 330px;
+        height: 280px;
+        margin: auto;
+        margin-top: 30px;
+    }
+.btnMenu{
+        text-align: center;
+        font-size: 25px;
+        color: white;
+        margin: 10px;
+        padding: 5px;
+        margin-top: 20px;
+        background-color: black;
+        border-radius: 20px;
+    }
+.btnMenu:hover{
+        background-color: rgb(54, 50, 50);
+        cursor: pointer;
+    }
+
+    /*referente tela 2*/
+#personalizar{
+        display: block;
+        width: 420px;
+        margin: auto;
+        display: none;
+    }
+    #personalizar > #divPre{
+        flex-wrap: wrap;
+        display: flex;
+    }
+    #personalizar > #persJogo{
+        text-align: center;
+        font-size: 35px;
+        font-weight: bold;
+        padding: 5px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+    #marcador{
+        max-width: 100px;
+        margin: 10px auto;
+        text-align: left;
+       font-size: 25px;        
+    }
+    .checkbox{
+        width: 20px;
+        height: 20px;    
+    }
+    .ladoAB{
+        display: block;
+        text-align: center;  
+        font-size: 20px;    
+        width: 210px;
+    }
+    #divBtnT2{
+        text-align: center;
+        font-size: 25px;
+        color: white;
+        display: flex;
+        padding: 5px; 
+    }
+    .inpName{
+        max-width: 140px;
+        height: 20px;
+        font-size: 15px;
+        margin: 10px;
+        font-weight: bold;
+        font-family:sans-serif;
+        text-align: center;
+        border: solid black 2px;
+    }
+
+    /*referente tela 3*/
+    #jogo{       
+        display: none;
+    }   
     .grid{
         max-width: 300px;
         margin: auto;
@@ -29,7 +104,6 @@ html{
         display: flex;
         justify-content: space-evenly;
         color: white;
-        
     }
     .table{
         width: 85px;
@@ -47,7 +121,6 @@ html{
     .comandos{
         width: 125px;
         font-size: 14px;
-        
         font-family: Verdana;
         padding: 2px;
         text-align: center;
@@ -64,90 +137,52 @@ html{
         justify-content: space-evenly;
         display: flex;
     }
-    
     #ll{
         width: 1px;
         height: 1px;
-    }
-    #menu{
-        display: block;
-        width: 330px;
-        height: 280px;
-        margin: auto;
-        margin-top: 30px;
-    }
-    .btnMenu{
-        text-align: center;
-        font-size: 25px;
-        color: white;
-        margin: 10px;
-        padding: 5px;
-        margin-top: 20px;
-        background-color: black;
-        border-radius: 20px;
-
-    }
-    .btnMenu:hover{
-        background-color: rgb(54, 50, 50);
-        cursor: pointer;
-    }
-    #personalizar{
-        display: block;
-        width: 420px;
-        margin: auto;
-        display: none;
-        
-        
-    }
-    
-    #divPre{
-        flex-wrap: wrap;
+    }    
+    #jogo > #tabuleiro{
         display: flex;
-       
     }
-    #persJogo{
-        text-align: center;
-        font-size: 35px;
+    #placar{
+        font-size: 30px;
+        margin: 10px 0 0 0;
         font-weight: bold;
-        padding: 5px;
-        margin-top: 4px;
-        margin-bottom: 4px;
-    }
-    .ladoAB{
-        display: block;
-        text-align: center;  
-        font-size: 20px;    
-        width: 210px;
-    }
-    .inpName{
-        max-width: 140px;
-        height: 20px;
-        font-size: 15px;
-        margin: 10px;
-        font-weight: bold;
-        font-family:sans-serif;
-        text-align: center;
-        border: solid black 2px;
-    }
-    
-    .checkbox{
-        width: 20px;
-        height: 20px; 
-        
-    }
-    #marcador{
-        max-width: 100px;
-        margin: 10px auto;
-        text-align: left;
-       font-size: 25px;        
-    }
-    #divBtnInicio{
-        text-align: center;
-        font-size: 25px;
-        color: white;
-        display: flex;
-        padding: 5px; 
-    }
+        margin-left: 60px;
+    }	
+    #ladoBT3{
+        width: 200px;
+        margin-left: -10px;
+}
+.ladoABT32{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+   
+ }
+ #divisorLadoB-B{
+     display: flex;
+ }
+ .nomeJ{
+    margin: 25px 0px;
+}
+.point{
+    font-size: 40px;
+}
+#vez{
+    text-align: center;
+    margin:  auto;
+    justify-content: space-evenly;
+   display: flex;
+    margin: 10px 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+#mostraJ{
+   height: 35px;
+   width: 35px;
+   border: solid black 2px;
+}
     .btn{
         text-align: center;
         font-size: 25px;
@@ -171,23 +206,21 @@ html{
     border-radius: 10px;
     margin-top: 15px;
   }
- 
-    
-    
-    
-    
+     
+    /*referente ao alert e confirm*/
     #box{
         display: none;
         border: solid black 7px;
         position: fixed;
         background: #000;
+        cursor: pointer;
         border-radius:2px; 
+        text-align: center;
         width:538px;
         z-index: 10;
         background:#FFF; 
         margin:8px;
     }
-    
     #boxHead{
         background: #666;
         font-size:19px;
@@ -206,9 +239,7 @@ html{
         display: flex;
         margin: auto;
         justify-content: space-evenly;
-        cursor: pointer;
-        
-        
+        cursor: pointer;        
     }
     .botaoBox{
         width: 125px;
@@ -219,54 +250,30 @@ html{
         margin: 10px 4px;
         color:black;
         background-color: white;
-        
     }
-    
-    #placar{
-        font-size: 30px;
-        margin: 10px 0 0 0;
-        font-weight: bold;
-        margin-left: 60px;
-    }	
-    #ladoBT3{
-            width: 200px;
-            margin-left: -10px;
+
+    /*referente a tela creditos*/
+    #mold{
+        display: block;
+        width: 330px;
+        height: 280px;
+        margin: auto;
+        margin-top: 30px;
     }
-    .ladoABT32{
-        width: 100%;
+    #creditos{       
+        display: none;
+    }
+    #creditos > h2{
+        margin-top: 40px;
         text-align: center;
-        font-size: 20px;
-       
-     }
-    
-     #divisorLadoB-B{
-         display: flex;
-     }
-     .nomeJ{
-         margin: 25px 0px;
-     }
-     .point{
-         font-size: 40px;
-     }
-     #vez{
-         text-align: center;
-         margin:  auto;
-         justify-content: space-evenly;
-        display: flex;
-         margin: 10px 0;
-    
-         font-size: 30px;
-         font-weight: bold;
-     }
-     #mostraJ{
-        height: 35px;
-        width: 35px;
-        border: solid black 2px;
+        font-size: 30px;
     }
-    #btnVoltarT3{
-        
+    #creditos > h3 {
+        margin: auto;
+        margin-top: 40px;
+        max-width: 400px;
+      text-align: center;
     }
-     #teste{
-         display: flex;
-     }
-    
+    #creditos > div > div{
+        margin-top: 85px;
+    }
