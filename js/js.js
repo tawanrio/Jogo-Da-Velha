@@ -10,7 +10,7 @@ var retConfirm;
 var j2 = '';
 var random
 var b = [];
-var c = random -1;
+
 var time;
 var jogoSolo;
 var primeiraTela = document.querySelector('#principal');
@@ -23,80 +23,75 @@ var Alert = new novoAlert(); // Cria novo alert personalizado
 var confirm = new novoConfirm(); // cria novo confirm personalizado
 
 chamadaEventos();
-chamaTela2();
+
 // Captura nome e marcador e insere na tela 3
-function inicio2J(){
+function inicio(){
 	capMarcador();
 	capNome();
 	vezJogador();
 	inseNomeJ();
-}
+}/*
 function inicio1J(){
 	capMarcador1J();
 	capNome1J();
 	vezJogador();
 	inseNomeJ1J();
 }
-
+*/
 //função que contem todos os eventos
 function chamadaEventos(){
-	
-	
+		
 	//Adiciona o evento click , verifica a vez do jogador , insere o marcadorJ1 ou marcadorJ2 e chama a função verificador()
-	a.forEach(quad =>{quad.addEventListener('click', function(){
-		if(jogoSolo == true){
-			insereJogada1J();
-		}else{
-			insereJogada();
-		}
-	})});
+	a.forEach(quad =>{quad.addEventListener('click', insereJogada)});
 
 	//Adiciona o evento click e limpa o tabuleiro
 	document.querySelector('#limpar').addEventListener('click', limpar);
-
 	
 	//Adiciona evento click ao botao Jogar na tela 1 para passar para tela 2
 document.querySelector('#btn1Jogar').addEventListener('click', function(){
 		chamaTela2();
 		jogoSolo = true;
-		console.log(jogoSolo);
 		vsCpu();
 		marcadorJ2 = 'O';
 		j2 = 'CPU'
+		document.getElementById('marcBol').value = '☻';
+		document.getElementById('LblMarcBol').innerText = '= ☻';
 		document.getElementById('nomeJ2').innerText = j2;
-	
-
-		//chamaTela3();
-		Alert.cod('Insira seu nome e escolha seu marcadore!')
+		 
+		Alert.cod('Insira seu nome e escolha seu marcador!')
 	})
 	//Adiciona evento click ao botao Jogar na tela 1 para passar para tela 2
 document.querySelector('#btn2Jogar').addEventListener('click', function(){
 	chamaTela2();
 	vs2J();
+	document.getElementById('marcBol').value = 'O';
+		document.getElementById('LblMarcBol').innerText = '= O';
 	jogoSolo = false;
-	console.log(jogoSolo);
-	//chamaTela3();
+
+	 
 	Alert.cod('Insira o nome dos jogadores e escolha seus marcadores!')
 })
 	//volta para a tela 1
 document.querySelector('#btnVoltarT2').addEventListener('click', function(){
 		chamaTela1();
-		//chamaTela3();
+		zeraJogo();
+		
 	})
 	//volta para a tela 1
 	document.querySelector('#btnVoltarCreditos').addEventListener('click', function(){
 		chamaTela1();
-		chamaTela3();
+		zeraJogo();
+		
 	})
 	// abre a tela de creditos
 	document.querySelector('#btnCreditos').addEventListener('click', function(){
 		chamaTelaCreditos();
-		chamaTela3();
+		
 	})
 	//verifica se os nomes e marcadores foram inseridos e abre a tela 3
 document.querySelector('#btnInicioT2').addEventListener('click', function(){
-		inicio2J();
-		
+	
+		inicio();
 		if(j1 != '' && j2 != ''){
 			chamaTela3();
 		}else{
@@ -104,12 +99,10 @@ document.querySelector('#btnInicioT2').addEventListener('click', function(){
 			}
 		})
 	document.querySelector('#btnInicioT21J').addEventListener('click', function(){
-			inicio1J();
 			
+			inicio();
 			if(j1 != ''){
 				chamaTela3();
-			
-				console.log(j2)
 				chamaSetInterval();
 			}else{
 				Alert.cod('Por favor, Insira seu nome!')
@@ -135,6 +128,30 @@ document.querySelector('#novoJogo').addEventListener('click', function(){
 document.getElementById('ia').addEventListener('click', inteligenciaArt)
 }
 
+function insereJogada(){
+	if(a[this.id].innerText == ''){	
+		if(jogoSolo == true){
+			if(vez == true){	
+				this.innerText = marcadorJ1;
+				b.push(parseInt(this.id))
+				vez = false;							
+			}				
+		}else{
+		if(vez == true){	
+			this.innerText = marcadorJ1;
+			b.push(parseInt(this.id))
+			vez = false;	
+									
+		}else{		
+			this.innerText = marcadorJ2;
+			vez = true;	
+		}					
+	}
+	verificador();
+	vezJogador();
+}
+}
+
 function vsCpu(){
 	document.getElementById('ladoA').style.margin = 'auto';
 	document.getElementById('ladoB').style.display = 'none';
@@ -152,13 +169,11 @@ function vs2J(){
 }
 
 function inteligenciaArt(){
-
 	random = Math.floor(Math.random() * 9)
 	
 	if(b.includes(0) == true && b.includes(1) == true && b.includes(2) == true && b.includes(3) == true && b.includes(4) == true 
 	&& b.includes(5) == true && b.includes(6) == true && b.includes(7) == true && b.includes(8) == true){
 		
-
 	}else{
 		while(b.includes(random) == true){
 			random = Math.floor(Math.random() * 9)
@@ -169,39 +184,8 @@ function inteligenciaArt(){
 		vez = true;
 	verificador();
 	vezJogador();
-		
-	}
-
-
-	/*
-	while(b.includes(random) == true){
-
-		if(b.includes(0) == true && b.includes(1) == true && b.includes(2) == true && b.includes(3) == true && b.includes(4) == true 
-		&& b.includes(5) == true && b.includes(6) == true && b.includes(7) == true && b.includes(8) == true){
-		break;
-
-	}else{
-		random = Math.floor(Math.random() * 9)
 	}
 }
-if(b.includes(0) == true && b.includes(1) == true && b.includes(2) == true && b.includes(3) == true && b.includes(4) == true 
-&& b.includes(5) == true && b.includes(6) == true && b.includes(7) == true && b.includes(8) == true){
-	
-	console.log(b)
-}else{
-	b.push(random)
-
-		console.log(random);
-		console.log(b + 'fora while');
-		console.log(b)
-}
-	*/	
-
-
-}
-
-
-
 
 function chamaTelaCreditos(){
 	textoJogodaVelha.style.display = 'none';
@@ -233,32 +217,34 @@ function chamaTela3(){
 }
 //captura o nome dos jogadores
 function capNome(){
+	if(jogoSolo == false){
 	j1 = document.querySelector('#player1').value;
 	j2 = document.querySelector('#player2').value;
+	}else{
+		j1 = document.querySelector('#player1').value;
+	}
 }
-function capNome1J(){
-	j1 = document.querySelector('#player1').value;
-	
-}
+
 //captura o marcador dos jogadores
 function capMarcador(){
+	if(jogoSolo == false){
 	marcadorJ1 = document.querySelector('input[name="tipoMarcadorJ1"]:checked').value
 	marcadorJ2 = document.querySelector('input[name="tipoMarcadorJ2"]:checked').value
-	
+	}else{
+		marcadorJ1 = document.querySelector('input[name="tipoMarcadorJ1"]:checked').value
+	}
 }
-function capMarcador1J(){
-	marcadorJ1 = document.querySelector('input[name="tipoMarcadorJ1"]:checked').value
-	
-}
+
 //insere o nome na tela 3
 function inseNomeJ(){
-	document.getElementById('nomeJ1').innerText = j1;
-	document.getElementById('nomeJ2').innerText = j2;
+	if(jogoSolo == false){
+		document.getElementById('nomeJ1').innerText = j1;
+		document.getElementById('nomeJ2').innerText = j2;
+	}else{
+		document.getElementById('nomeJ1').innerText = j1;
+	}
 }
-function inseNomeJ1J(){
-	document.getElementById('nomeJ1').innerText = j1;
-	
-}
+
 //Mostra de quem é a vez de jogar
 function vezJogador(){
 	if(vez == true){
@@ -299,38 +285,6 @@ function chamaSetInterval(){
 		inteligenciaArt()
 	}
 }, 3000)
-}
-
-function insereJogada(){
-	if(a[this.id].innerText == ''){	
-		if(vez == true){	
-			this.innerText = marcadorJ1;
-			b.push(parseInt(this.id))
-			vez = false;	
-						
-		}else{		
-			this.innerText = marcadorJ2;
-			vez = true;			
-		}					
-	}
-	verificador();
-	vezJogador();
-}
-
-function insereJogada1J(){
-		if(a[this.id].innerText == ''){	
-			if(vez == true){	
-				this.innerText = marcadorJ1;
-				b.push(parseInt(this.id))
-				vez = false;	
-							
-			}else{		
-				alert('Por favor, Aguarde a sua vez!');		
-			}					
-		}
-	
-	verificador();
-	vezJogador();
 }
 
 

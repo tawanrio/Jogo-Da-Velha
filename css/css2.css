@@ -13,7 +13,7 @@ html{    margin-top: 200px;    }
 
     /*referente tela 1*/
 #principal > h1{
-        margin: 35px 0px 10px 0px ;
+        margin: 25px 0px 10px 0px ;
         text-align: center;
         font-size: 50px;
     }
@@ -22,7 +22,7 @@ html{    margin-top: 200px;    }
         width: 330px;
         height: 280px;
         margin: auto;
-        margin-top: 30px;
+        margin-top: 25px;
     }
 .btnMenu{
         text-align: center;
@@ -294,11 +294,4 @@ html{    margin-top: 200px;    }
     }
 
 
-    #ia{
-        width: 40px;
-        height: 40px;
-        background-color: red;
-    }
-    #ia:hover{
-        background-color: blue;
-    }
+  
